@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "category": "Science & Innovation",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.nobelprize.org/prizes/medicine/1979/summary/",
+    "https://www.salt.ac.za/",
+    "https://whc.unesco.org/en/list/1575/"
+  ],
+  "questions": [
+    {
+      "id": "sci_001",
+      "category": "Science & Innovation",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which South African town is home to the Southern African Large Telescope?",
+      "options": [
+        {
+          "id": "sci_001_a",
+          "text": "Sutherland",
+          "isCorrect": true
+        },
+        {
+          "id": "sci_001_b",
+          "text": "Hermanus"
+        },
+        {
+          "id": "sci_001_c",
+          "text": "Upington"
+        },
+        {
+          "id": "sci_001_d",
+          "text": "Grahamstown"
+        }
+      ],
+      "explanation": "SALT is located near Sutherland in the Northern Cape, high above the Karoo.",
+      "timeLimit": 15
+    },
+    {
+      "id": "sci_002",
+      "category": "Science & Innovation",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "South African scientist Allan Cormack shared a Nobel Prize for work that helped make which technology possible?",
+      "options": [
+        {
+          "id": "sci_002_a",
+          "text": "Magnetic resonance imaging"
+        },
+        {
+          "id": "sci_002_b",
+          "text": "The CT scanner",
+          "isCorrect": true
+        },
+        {
+          "id": "sci_002_c",
+          "text": "Ultrasound"
+        },
+        {
+          "id": "sci_002_d",
+          "text": "The pacemaker"
+        }
+      ],
+      "explanation": "Cormack's mathematical work on reconstructing images from X-rays helped enable computed tomography.",
+      "timeLimit": 12
+    },
+    {
+      "id": "sci_003",
+      "category": "Science & Innovation",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "The 3.45-billion-year-old stromatolites at Barberton Makhonjwa are evidence of what?",
+      "options": [
+        {
+          "id": "sci_003_a",
+          "text": "Some of the earliest evidence of life on Earth",
+          "isCorrect": true
+        },
+        {
+          "id": "sci_003_b",
+          "text": "The first flowering plants"
+        },
+        {
+          "id": "sci_003_c",
+          "text": "An ancient dinosaur nesting site"
+        },
+        {
+          "id": "sci_003_d",
+          "text": "The earliest human footprints"
+        }
+      ],
+      "explanation": "The Barberton Greenstone Belt preserves very ancient rocks and microbial structures linked to early life.",
+      "timeLimit": 10
+    }
+  ]
+}

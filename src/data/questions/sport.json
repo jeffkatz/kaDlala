@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "category": "Sport",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.sarugby.co.za/",
+    "https://www.fifa.com/tournaments/mens/worldcup/2010south-africa"
+  ],
+  "questions": [
+    {
+      "id": "sport_001",
+      "category": "Sport",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which country did South Africa defeat in the 1995 Rugby World Cup final?",
+      "explanation": "South Africa beat New Zealand 15–12 after extra time in the 1995 final at Ellis Park.",
+      "options": [
+        {
+          "id": "sport_001_a",
+          "text": "Australia"
+        },
+        {
+          "id": "sport_001_b",
+          "text": "New Zealand",
+          "isCorrect": true
+        },
+        {
+          "id": "sport_001_c",
+          "text": "England"
+        },
+        {
+          "id": "sport_001_d",
+          "text": "France"
+        }
+      ],
+      "timeLimit": 15
+    },
+    {
+      "id": "sport_002",
+      "category": "Sport",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Which city hosted the 2010 FIFA World Cup final?",
+      "explanation": "The final was played at Soccer City in Johannesburg, where Spain beat the Netherlands.",
+      "options": [
+        {
+          "id": "sport_002_a",
+          "text": "Cape Town"
+        },
+        {
+          "id": "sport_002_b",
+          "text": "Durban"
+        },
+        {
+          "id": "sport_002_c",
+          "text": "Johannesburg",
+          "isCorrect": true
+        },
+        {
+          "id": "sport_002_d",
+          "text": "Pretoria"
+        }
+      ],
+      "timeLimit": 10
+    },
+    {
+      "id": "sport_003",
+      "category": "Sport",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "What is the nickname of South Africa's men's national football team?",
+      "explanation": "Bafana Bafana means 'the boys, the boys' in isiZulu and isiXhosa.",
+      "options": [
+        {
+          "id": "sport_003_a",
+          "text": "The Warriors"
+        },
+        {
+          "id": "sport_003_b",
+          "text": "Bafana Bafana",
+          "isCorrect": true
+        },
+        {
+          "id": "sport_003_c",
+          "text": "The Lions"
+        },
+        {
+          "id": "sport_003_d",
+          "text": "Amakhosi"
+        }
+      ],
+      "timeLimit": 12
+    },
+    {
+      "id": "sport_004",
+      "category": "Sport",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "What is the nickname of South Africa's men's national cricket team?",
+      "options": [
+        {
+          "id": "sport_004_a",
+          "text": "The Proteas",
+          "isCorrect": true
+        },
+        {
+          "id": "sport_004_b",
+          "text": "The Springboks"
+        },
+        {
+          "id": "sport_004_c",
+          "text": "The Elephants"
+        },
+        {
+          "id": "sport_004_d",
+          "text": "The Rhinos"
+        }
+      ],
+      "explanation": "The Protea, South Africa's national flower, gives the men's cricket team its nickname.",
+      "timeLimit": 15
+    },
+    {
+      "id": "sport_005",
+      "category": "Sport",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Which South African athlete won the men's 400 m at the 2016 Rio Olympics?",
+      "options": [
+        {
+          "id": "sport_005_a",
+          "text": "Akani Simbine"
+        },
+        {
+          "id": "sport_005_b",
+          "text": "Wayde van Niekerk",
+          "isCorrect": true
+        },
+        {
+          "id": "sport_005_c",
+          "text": "Luvo Manyonga"
+        },
+        {
+          "id": "sport_005_d",
+          "text": "Caster Semenya"
+        }
+      ],
+      "explanation": "Wayde van Niekerk won gold in a world-record time of 43.03 seconds.",
+      "timeLimit": 12
+    },
+    {
+      "id": "sport_006",
+      "category": "Sport",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Which South African golfer is nicknamed 'The Big Easy'?",
+      "options": [
+        {
+          "id": "sport_006_a",
+          "text": "Gary Player"
+        },
+        {
+          "id": "sport_006_b",
+          "text": "Ernie Els",
+          "isCorrect": true
+        },
+        {
+          "id": "sport_006_c",
+          "text": "Retief Goosen"
+        },
+        {
+          "id": "sport_006_d",
+          "text": "Louis Oosthuizen"
+        }
+      ],
+      "explanation": "Ernie Els earned the nickname 'The Big Easy' for his height and effortless swing.",
+      "timeLimit": 10
+    }
+  ]
+}

@@ -1,41 +1,36 @@
 import { useState, useEffect, useRef } from 'react';
 
-export default function useGameTimer(duration, onExpire, resetKey) {
+export default function useGameTimer(duration, onExpire) {
     const [timeLeft, setTimeLeft] = useState(duration);
     const [isRunning, setIsRunning] = useState(true);
-    const timerRef = useRef(null);
+    const onExpireRef = useRef(onExpire);
+    const hasExpiredRef = useRef(false);
 
     useEffect(() => {
-        // Reset timer when duration or key changes
-        setTimeLeft(duration);
-        setIsRunning(true);
-    }, [duration, resetKey]);
+        onExpireRef.current = onExpire;
+    }, [onExpire]);
 
     useEffect(() => {
-        if (!isRunning || timeLeft <= 0) {
-            if (timeLeft <= 0) {
+        if (!isRunning || timeLeft <= 0) return;
+
+        const intervalId = setInterval(() => {
+            if (timeLeft <= 1) {
+                setTimeLeft(0);
                 setIsRunning(false);
-                onExpire();
-            }
-            return;
-        }
-
-        timerRef.current = setInterval(() => {
-            setTimeLeft((prev) => {
-                if (prev <= 1) {
-                    clearInterval(timerRef.current);
-                    return 0; // Will trigger onExpire in the next render cycle check or immediately
+                if (!hasExpiredRef.current) {
+                    hasExpiredRef.current = true;
+                    onExpireRef.current();
                 }
-                return prev - 1;
-            });
+                return;
+            }
+            setTimeLeft((previousTime) => previousTime - 1);
         }, 1000);
 
-        return () => clearInterval(timerRef.current);
-    }, [timeLeft, isRunning, onExpire]);
+        return () => clearInterval(intervalId);
+    }, [isRunning, timeLeft]);
 
     const stopTimer = () => {
         setIsRunning(false);
-        clearInterval(timerRef.current);
     };
 
     return { timeLeft, stopTimer };

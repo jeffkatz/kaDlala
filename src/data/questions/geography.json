@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "category": "Geography",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.gov.za/about-sa/south-africa-glance",
+    "https://www.britannica.com/place/South-Africa"
+  ],
+  "questions": [
+    {
+      "id": "geo_001",
+      "category": "Geography",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which South African province is known as the 'Place of Gold'?",
+      "explanation": "Gauteng's name comes from a Sotho word for gold, reflecting the province's mining history.",
+      "options": [
+        {
+          "id": "geo_001_a",
+          "text": "Western Cape"
+        },
+        {
+          "id": "geo_001_b",
+          "text": "Gauteng",
+          "isCorrect": true
+        },
+        {
+          "id": "geo_001_c",
+          "text": "Limpopo"
+        },
+        {
+          "id": "geo_001_d",
+          "text": "Free State"
+        }
+      ],
+      "timeLimit": 15
+    },
+    {
+      "id": "geo_002",
+      "category": "Geography",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Which country is completely surrounded by South African territory?",
+      "explanation": "Lesotho is an independent, landlocked country entirely enclosed by South Africa.",
+      "options": [
+        {
+          "id": "geo_002_a",
+          "text": "Eswatini"
+        },
+        {
+          "id": "geo_002_b",
+          "text": "Botswana"
+        },
+        {
+          "id": "geo_002_c",
+          "text": "Lesotho",
+          "isCorrect": true
+        },
+        {
+          "id": "geo_002_d",
+          "text": "Namibia"
+        }
+      ],
+      "timeLimit": 10
+    },
+    {
+      "id": "geo_003",
+      "category": "Geography",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "The Orange River reaches the Atlantic Ocean near which town?",
+      "explanation": "The Orange River forms part of the South Africa–Namibia border before reaching the Atlantic at Alexander Bay.",
+      "options": [
+        {
+          "id": "geo_003_a",
+          "text": "Alexander Bay",
+          "isCorrect": true
+        },
+        {
+          "id": "geo_003_b",
+          "text": "Mossel Bay"
+        },
+        {
+          "id": "geo_003_c",
+          "text": "Richards Bay"
+        },
+        {
+          "id": "geo_003_d",
+          "text": "Saldanha Bay"
+        }
+      ],
+      "timeLimit": 12
+    },
+    {
+      "id": "geo_004",
+      "category": "Geography",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which is South Africa's largest province by land area?",
+      "options": [
+        {
+          "id": "geo_004_a",
+          "text": "Eastern Cape"
+        },
+        {
+          "id": "geo_004_b",
+          "text": "Northern Cape",
+          "isCorrect": true
+        },
+        {
+          "id": "geo_004_c",
+          "text": "Free State"
+        },
+        {
+          "id": "geo_004_d",
+          "text": "Western Cape"
+        }
+      ],
+      "explanation": "The Northern Cape is by far the largest province, covering almost a third of South Africa.",
+      "timeLimit": 15
+    },
+    {
+      "id": "geo_005",
+      "category": "Geography",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Which headland marks the southernmost point of the African continent?",
+      "options": [
+        {
+          "id": "geo_005_a",
+          "text": "Cape Point"
+        },
+        {
+          "id": "geo_005_b",
+          "text": "Cape Agulhas",
+          "isCorrect": true
+        },
+        {
+          "id": "geo_005_c",
+          "text": "Cape of Good Hope"
+        },
+        {
+          "id": "geo_005_d",
+          "text": "Cape St Francis"
+        }
+      ],
+      "explanation": "Cape Agulhas, not Cape Point, is the continent's southernmost tip.",
+      "timeLimit": 12
+    },
+    {
+      "id": "geo_006",
+      "category": "Geography",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Which two countries share the Kgalagadi Transfrontier Park?",
+      "options": [
+        {
+          "id": "geo_006_a",
+          "text": "South Africa and Namibia"
+        },
+        {
+          "id": "geo_006_b",
+          "text": "South Africa and Botswana",
+          "isCorrect": true
+        },
+        {
+          "id": "geo_006_c",
+          "text": "Botswana and Zimbabwe"
+        },
+        {
+          "id": "geo_006_d",
+          "text": "Namibia and Angola"
+        }
+      ],
+      "explanation": "Kgalagadi joins protected areas in South Africa and Botswana across the Kalahari.",
+      "timeLimit": 10
+    }
+  ]
+}

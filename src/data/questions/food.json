@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "category": "Food",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.southafrica.net/"
+  ],
+  "questions": [
+    {
+      "id": "food_001",
+      "category": "Food",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which South African dish is made with spiced minced meat baked with an egg-based topping?",
+      "explanation": "Bobotie is a Cape Malay-influenced baked dish of spiced mince topped with an egg-and-milk custard.",
+      "options": [
+        {
+          "id": "food_001_a",
+          "text": "Bunny chow"
+        },
+        {
+          "id": "food_001_b",
+          "text": "Bobotie",
+          "isCorrect": true
+        },
+        {
+          "id": "food_001_c",
+          "text": "Pap"
+        },
+        {
+          "id": "food_001_d",
+          "text": "Potjiekos"
+        }
+      ],
+      "timeLimit": 15
+    },
+    {
+      "id": "food_002",
+      "category": "Food",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Bunny chow, a curry served in a hollowed-out loaf, originated in which city?",
+      "explanation": "Bunny chow emerged in Durban, shaped by the city's Indian South African community and curry traditions.",
+      "options": [
+        {
+          "id": "food_002_a",
+          "text": "Johannesburg"
+        },
+        {
+          "id": "food_002_b",
+          "text": "Durban",
+          "isCorrect": true
+        },
+        {
+          "id": "food_002_c",
+          "text": "Cape Town"
+        },
+        {
+          "id": "food_002_d",
+          "text": "Gqeberha"
+        }
+      ],
+      "timeLimit": 10
+    },
+    {
+      "id": "food_003",
+      "category": "Food",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "What is biltong?",
+      "explanation": "Biltong is meat cured with spices and vinegar, then air-dried rather than cooked.",
+      "options": [
+        {
+          "id": "food_003_a",
+          "text": "A fermented maize drink"
+        },
+        {
+          "id": "food_003_b",
+          "text": "Air-dried, cured meat",
+          "isCorrect": true
+        },
+        {
+          "id": "food_003_c",
+          "text": "A sweet milk tart"
+        },
+        {
+          "id": "food_003_d",
+          "text": "A grilled corn cake"
+        }
+      ],
+      "timeLimit": 12
+    },
+    {
+      "id": "food_004",
+      "category": "Food",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "What is the name of the South African sweet, spiced doughnut often covered in syrup and coconut?",
+      "options": [
+        {
+          "id": "food_004_a",
+          "text": "Koeksister",
+          "isCorrect": true
+        },
+        {
+          "id": "food_004_b",
+          "text": "Rusks"
+        },
+        {
+          "id": "food_004_c",
+          "text": "Melktert"
+        },
+        {
+          "id": "food_004_d",
+          "text": "Hertzoggie"
+        }
+      ],
+      "explanation": "Koeksisters are plaited dough treats; Cape Malay versions are often spiced and coated in coconut.",
+      "timeLimit": 15
+    },
+    {
+      "id": "food_005",
+      "category": "Food",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Which dish is a savoury relish commonly made with tomatoes, onions, beans and chilli?",
+      "options": [
+        {
+          "id": "food_005_a",
+          "text": "Chakalaka",
+          "isCorrect": true
+        },
+        {
+          "id": "food_005_b",
+          "text": "Umngqusho"
+        },
+        {
+          "id": "food_005_c",
+          "text": "Vetkoek"
+        },
+        {
+          "id": "food_005_d",
+          "text": "Bredie"
+        }
+      ],
+      "explanation": "Chakalaka is a spicy vegetable relish often served with pap and braai food.",
+      "timeLimit": 12
+    },
+    {
+      "id": "food_006",
+      "category": "Food",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Umngqusho, a favourite dish associated with Nelson Mandela, is made mainly from what?",
+      "options": [
+        {
+          "id": "food_006_a",
+          "text": "Samp and beans",
+          "isCorrect": true
+        },
+        {
+          "id": "food_006_b",
+          "text": "Maize meal and spinach"
+        },
+        {
+          "id": "food_006_c",
+          "text": "Rice and lentils"
+        },
+        {
+          "id": "food_006_d",
+          "text": "Wheat and pumpkin"
+        }
+      ],
+      "explanation": "Umngqusho is a Xhosa dish of samp (crushed dried maize) and beans, cooked until tender.",
+      "timeLimit": 10
+    }
+  ]
+}

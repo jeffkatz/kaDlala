@@ -15,9 +15,13 @@ export default function TimerClock({ timeLeft, totalTime }) {
     if (percentage < 0.2) color = 'var(--color-danger)';
 
     return (
-        <div style={{ position: 'relative', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div
+            role="timer"
+            aria-label={`${timeLeft} seconds remaining`}
+            style={{ position: 'relative', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        >
             {/* Background Circle */}
-            <svg width="60" height="60" style={{ transform: 'rotate(-90deg)' }}>
+            <svg width="60" height="60" aria-hidden="true" style={{ transform: 'rotate(-90deg)' }}>
                 <circle
                     cx="30"
                     cy="30"

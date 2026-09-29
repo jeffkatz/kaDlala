@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "category": "Public Life & Civics",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.gov.za/about-sa/south-africa-glance",
+    "https://www.gov.za/documents/constitution-republic-south-africa-1996"
+  ],
+  "questions": [
+    {
+      "id": "civic_001",
+      "category": "Public Life & Civics",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which city is South Africa's administrative capital?",
+      "options": [
+        {
+          "id": "civic_001_a",
+          "text": "Pretoria",
+          "isCorrect": true
+        },
+        {
+          "id": "civic_001_b",
+          "text": "Cape Town"
+        },
+        {
+          "id": "civic_001_c",
+          "text": "Bloemfontein"
+        },
+        {
+          "id": "civic_001_d",
+          "text": "Johannesburg"
+        }
+      ],
+      "explanation": "South Africa has three capitals: Pretoria (administrative), Cape Town (legislative), and Bloemfontein (judicial).",
+      "timeLimit": 15
+    },
+    {
+      "id": "civic_002",
+      "category": "Public Life & Civics",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "How many provinces make up the Republic of South Africa?",
+      "options": [
+        {
+          "id": "civic_002_a",
+          "text": "8"
+        },
+        {
+          "id": "civic_002_b",
+          "text": "9",
+          "isCorrect": true
+        },
+        {
+          "id": "civic_002_c",
+          "text": "10"
+        },
+        {
+          "id": "civic_002_d",
+          "text": "11"
+        }
+      ],
+      "explanation": "South Africa's nine provinces are listed in the current government overview.",
+      "timeLimit": 12
+    },
+    {
+      "id": "civic_003",
+      "category": "Public Life & Civics",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "What is South Africa's official currency?",
+      "options": [
+        {
+          "id": "civic_003_a",
+          "text": "Rand (ZAR)",
+          "isCorrect": true
+        },
+        {
+          "id": "civic_003_b",
+          "text": "Pula (BWP)"
+        },
+        {
+          "id": "civic_003_c",
+          "text": "Loti (LSL)"
+        },
+        {
+          "id": "civic_003_d",
+          "text": "Metical (MZN)"
+        }
+      ],
+      "explanation": "The South African rand is abbreviated ZAR; one rand is divided into 100 cents.",
+      "timeLimit": 15
+    },
+    {
+      "id": "civic_004",
+      "category": "Public Life & Civics",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Which three spheres of government are set out in South Africa's constitutional system?",
+      "options": [
+        {
+          "id": "civic_004_a",
+          "text": "National, provincial and local",
+          "isCorrect": true
+        },
+        {
+          "id": "civic_004_b",
+          "text": "Federal, state and county"
+        },
+        {
+          "id": "civic_004_c",
+          "text": "Executive, judicial and municipal"
+        },
+        {
+          "id": "civic_004_d",
+          "text": "Parliament, cabinet and courts"
+        }
+      ],
+      "explanation": "South Africa's government works across national, provincial and local spheres.",
+      "timeLimit": 10
+    }
+  ]
+}
