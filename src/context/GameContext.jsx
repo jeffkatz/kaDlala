@@ -1,4 +1,5 @@
-import { createContext, useContext, useReducer } from 'react';
+import { useReducer } from 'react';
+import { GameContext } from './gameContextStore';
 
 // --- Initial State ---
 const initialState = {
@@ -29,17 +30,17 @@ function gameReducer(state, action) {
             };
 
         case GAME_ACTIONS.SUBMIT_ANSWER:
-            // Payload: { questionId, answerId, isCorrect, timeTaken }
-            // Calculate score delta
-            const points = action.payload.isCorrect ? 100 : 0; // Simplified for now
-
+        {
+            const points = action.payload.isCorrect ? action.payload.points : 0;
             return {
                 ...state,
                 score: state.score + points,
                 answers: [...state.answers, action.payload],
             };
+        }
 
         case GAME_ACTIONS.NEXT_QUESTION:
+        {
             const nextIndex = state.currentQuestionIndex + 1;
             const isFinished = nextIndex >= state.questions.length;
 
@@ -48,6 +49,7 @@ function gameReducer(state, action) {
                 currentQuestionIndex: isFinished ? state.currentQuestionIndex : nextIndex,
                 gameState: isFinished ? 'FINISHED' : 'PLAYING',
             };
+        }
 
         case GAME_ACTIONS.RESTART:
             return initialState;
@@ -56,9 +58,6 @@ function gameReducer(state, action) {
             return state;
     }
 }
-
-// --- Context ---
-const GameContext = createContext(null);
 
 export function GameProvider({ children }) {
     const [state, dispatch] = useReducer(gameReducer, initialState);
@@ -90,13 +89,4 @@ export function GameProvider({ children }) {
             {children}
         </GameContext.Provider>
     );
-}
-
-// --- Hook ---
-export function useGame() {
-    const context = useContext(GameContext);
-    if (!context) {
-        throw new Error('useGame must be used within a GameProvider');
-    }
-    return context;
 }

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "category": "Landmarks",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://whc.unesco.org/en/list/915/",
+    "https://www.gov.za/about-sa/south-africa-glance"
+  ],
+  "questions": [
+    {
+      "id": "land_001",
+      "category": "Landmarks",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Robben Island lies off the coast of which city?",
+      "explanation": "The island sits in Table Bay, just offshore from Cape Town.",
+      "options": [
+        {
+          "id": "land_001_a",
+          "text": "Durban"
+        },
+        {
+          "id": "land_001_b",
+          "text": "Cape Town",
+          "isCorrect": true
+        },
+        {
+          "id": "land_001_c",
+          "text": "East London"
+        },
+        {
+          "id": "land_001_d",
+          "text": "Mossel Bay"
+        }
+      ],
+      "timeLimit": 15
+    },
+    {
+      "id": "land_002",
+      "category": "Landmarks",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "The Sterkfontein Caves, famous for early hominin fossils, are in which province?",
+      "explanation": "The Sterkfontein Caves are part of the Cradle of Humankind World Heritage Site in Gauteng.",
+      "options": [
+        {
+          "id": "land_002_a",
+          "text": "Gauteng",
+          "isCorrect": true
+        },
+        {
+          "id": "land_002_b",
+          "text": "North West"
+        },
+        {
+          "id": "land_002_c",
+          "text": "Limpopo"
+        },
+        {
+          "id": "land_002_d",
+          "text": "Free State"
+        }
+      ],
+      "timeLimit": 10
+    },
+    {
+      "id": "land_003",
+      "category": "Landmarks",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Which town is home to the Big Hole, a famous former diamond mine?",
+      "explanation": "Kimberley's Big Hole was dug during the late-19th-century diamond rush.",
+      "options": [
+        {
+          "id": "land_003_a",
+          "text": "Kimberley",
+          "isCorrect": true
+        },
+        {
+          "id": "land_003_b",
+          "text": "Stellenbosch"
+        },
+        {
+          "id": "land_003_c",
+          "text": "Upington"
+        },
+        {
+          "id": "land_003_d",
+          "text": "Pietermaritzburg"
+        }
+      ],
+      "timeLimit": 12
+    },
+    {
+      "id": "land_004",
+      "category": "Landmarks",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "What is the name of Cape Town's famous flat-topped mountain?",
+      "options": [
+        {
+          "id": "land_004_a",
+          "text": "Lion's Head"
+        },
+        {
+          "id": "land_004_b",
+          "text": "Table Mountain",
+          "isCorrect": true
+        },
+        {
+          "id": "land_004_c",
+          "text": "Signal Hill"
+        },
+        {
+          "id": "land_004_d",
+          "text": "Devil's Peak"
+        }
+      ],
+      "explanation": "Table Mountain's distinctive flat summit overlooks Cape Town and Table Bay.",
+      "timeLimit": 15
+    },
+    {
+      "id": "land_005",
+      "category": "Landmarks",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "In which province is the Blyde River Canyon Nature Reserve?",
+      "options": [
+        {
+          "id": "land_005_a",
+          "text": "Mpumalanga",
+          "isCorrect": true
+        },
+        {
+          "id": "land_005_b",
+          "text": "Limpopo"
+        },
+        {
+          "id": "land_005_c",
+          "text": "KwaZulu-Natal"
+        },
+        {
+          "id": "land_005_d",
+          "text": "Free State"
+        }
+      ],
+      "explanation": "The Blyde River Canyon Nature Reserve is in Mpumalanga, along the Drakensberg escarpment.",
+      "timeLimit": 12
+    },
+    {
+      "id": "land_006",
+      "category": "Landmarks",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "South Africa's oldest surviving colonial building is which Cape Town landmark?",
+      "options": [
+        {
+          "id": "land_006_a",
+          "text": "Castle of Good Hope",
+          "isCorrect": true
+        },
+        {
+          "id": "land_006_b",
+          "text": "Iziko Slave Lodge"
+        },
+        {
+          "id": "land_006_c",
+          "text": "Groote Schuur"
+        },
+        {
+          "id": "land_006_d",
+          "text": "Tuynhuys"
+        }
+      ],
+      "explanation": "The Castle of Good Hope was built by the Dutch East India Company between 1666 and 1679.",
+      "timeLimit": 10
+    }
+  ]
+}

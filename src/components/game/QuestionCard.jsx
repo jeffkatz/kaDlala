@@ -1,91 +1,83 @@
+import { motion, useReducedMotion } from 'motion/react';
 import propTypes from 'prop-types';
 
-/* 
-  QuestionCard Component
-  Displays the question text, category, and answer options.
-*/
+const MotionDiv = motion.div;
+const MotionButton = motion.button;
 
-export default function QuestionCard({ question, onAnswer }) {
-    const { category, text, options } = question;
+export default function QuestionCard({ question, onAnswer, timeLeft, isAnswered }) {
+    const { category, difficulty, points, text, options } = question;
+    const reduceMotion = useReducedMotion();
+    const correctOption = options.find((option) => option.isCorrect);
 
     return (
-        <div className="question-card" style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '2rem',
-            textAlign: 'center'
-        }}>
-
-            {/* Header / Category */}
-            <div>
-                <span style={{
-                    background: 'var(--color-secondary)',
-                    color: 'white',
-                    padding: '0.25rem 0.75rem',
-                    borderRadius: '99px',
-                    fontSize: '0.875rem',
-                    fontWeight: '600',
-                    textTransform: 'uppercase',
-                    letterSpacing: '1px'
-                }}>
-                    {category}
-                </span>
+        <MotionDiv
+            className="question-card"
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+        >
+            <div className="question-card__heading">
+                <span className="category-tag">{category}</span>
+                <span className={`difficulty-tag difficulty-tag--${difficulty.toLowerCase()}`}>{difficulty}</span>
+                <span className="question-points">{points} base points</span>
             </div>
 
-            {/* Question Body */}
-            <h3 style={{
-                fontSize: '2rem',
-                fontWeight: '600',
-                minHeight: '120px', // Prevent layout jump
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}>
-                {text}
-            </h3>
+            <h1 className="question-title">{text}</h1>
 
-            {/* Options Grid */}
-            <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr',
-                gap: '1rem',
-                marginTop: '1rem'
-            }}>
-                {options.map((opt) => (
-                    <button
-                        key={opt.id}
-                        onClick={() => onAnswer(opt.id)}
-                        className="btn glass-panel"
-                        style={{
-                            width: '100%',
-                            padding: '1.5rem',
-                            fontSize: '1.2rem',
-                            textAlign: 'left',
-                            justifyContent: 'flex-start',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            transition: 'all 0.2s ease',
-                            cursor: 'pointer',
-                            color: 'var(--text-main)',
-                            background: 'rgba(255,255,255,0.03)'
-                        }}
-                        onMouseOver={(e) => {
-                            e.currentTarget.style.background = 'rgba(255, 184, 0, 0.2)';
-                            e.currentTarget.style.borderColor = 'var(--color-primary)';
-                        }}
-                        onMouseOut={(e) => {
-                            e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
-                            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-                        }}
-                    >
-                        {opt.text}
-                    </button>
-                ))}
+            <div className="answer-grid" role="group" aria-label="Choose your answer">
+                {options.map((option, index) => {
+                    const isRightAnswer = option.isCorrect;
+                    const answerClass = isAnswered
+                        ? isRightAnswer
+                            ? ' answer-option--correct'
+                            : ' answer-option--muted'
+                        : '';
+
+                    return (
+                        <MotionButton
+                            key={option.id}
+                            type="button"
+                            className={`answer-option${answerClass}`}
+                            onClick={() => onAnswer(option.id)}
+                            disabled={isAnswered}
+                            aria-pressed={isAnswered && isRightAnswer}
+                            whileHover={isAnswered || reduceMotion ? undefined : { y: -2 }}
+                            whileTap={isAnswered || reduceMotion ? undefined : { scale: 0.985 }}
+                            transition={{ duration: 0.15 }}
+                        >
+                            <span className="answer-option__letter">{String.fromCharCode(65 + index)}</span>
+                            <span className="answer-option__text">{option.text}</span>
+                            {isAnswered && isRightAnswer && <span className="answer-option__check" aria-hidden="true">✓</span>}
+                        </MotionButton>
+                    );
+                })}
             </div>
-        </div>
+
+            <div className="question-card__footer">
+                <span className="answer-hint">{isAnswered ? 'Answer logged in your field notes.' : 'Trust your first thought. The clock is running.'}</span>
+                {isAnswered && (
+                    <span className="answer-feedback" role="status">
+                        {timeLeft === 0 ? 'Time — remember:' : 'Answer:'} <strong>{correctOption?.text}</strong>
+                    </span>
+                )}
+            </div>
+        </MotionDiv>
     );
 }
 
 QuestionCard.propTypes = {
-    question: propTypes.object.isRequired,
+    question: propTypes.shape({
+        category: propTypes.string.isRequired,
+        difficulty: propTypes.string.isRequired,
+        points: propTypes.number.isRequired,
+        text: propTypes.string.isRequired,
+        options: propTypes.arrayOf(propTypes.shape({
+            id: propTypes.string.isRequired,
+            text: propTypes.string.isRequired,
+            isCorrect: propTypes.bool
+        })).isRequired
+    }).isRequired,
     onAnswer: propTypes.func.isRequired,
+    timeLeft: propTypes.number.isRequired,
+    isAnswered: propTypes.bool.isRequired
 };

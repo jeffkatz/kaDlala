@@ -1,16 +1,73 @@
-# React + Vite
+# kaDlala
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+kaDlala is a South African knowledge quiz for solo play and live rooms of up to 16 friends. A round mixes categories and difficulty, rewards quick answers and streaks, and ends with scorecards and answer explanations.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```sh
+npm install
+npm run dev
+```
 
-## React Compiler
+`npm run lint` checks the source and `npm run build` creates the production bundle.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Question bank files
 
-## Expanding the ESLint configuration
+Keep question banks in `src/data/questions/`, with one UTF-8 JSON file per category. Vite loads every `*.json` file in that folder when the app builds. Current category files are Geography, Culture, Nature, History, Sport, Food, Landmarks, Science & Innovation, and Public Life & Civics.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The settings page can import an additional bank in the same format. Valid files are stored in that browser and become available for solo and hosted online rounds. Importing does not edit the repository. To contribute questions to everyone, add the file to `src/data/questions/`.
+
+### Schema version 1
+
+```json
+{
+  "schemaVersion": 1,
+  "category": "Local Knowledge",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.gov.za/about-sa/south-africa-glance"
+  ],
+  "questions": [
+    {
+      "id": "local_001",
+      "category": "Local Knowledge",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Replace this with a South African quiz question.",
+      "options": [
+        { "id": "local_001_a", "text": "Answer A", "isCorrect": true },
+        { "id": "local_001_b", "text": "Answer B" },
+        { "id": "local_001_c", "text": "Answer C" },
+        { "id": "local_001_d", "text": "Answer D" }
+      ],
+      "explanation": "Explain why the correct answer is right.",
+      "timeLimit": 12
+    }
+  ]
+}
+```
+
+Requirements:
+
+- `schemaVersion` must be `1`; `reviewedAt` is an ISO date (`YYYY-MM-DD`); `sources` has one or more authoritative HTTP(S) URLs.
+- `category` must be non-empty and match the category on every question.
+- Question IDs must be unique across all built-in and imported banks; answer option IDs must be unique within their question.
+- A bank contains 1–250 questions and imported files must be smaller than 1 MB.
+- `difficulty` is `Easy`, `Medium`, or `Hard`. `points` is a positive integer. `timeLimit` is an integer from 5 to 60 seconds.
+- Every question needs a non-empty explanation and exactly four answer options, with exactly one `isCorrect: true`.
+- Re-check time-sensitive facts and update `reviewedAt` before distributing a question file.
+
+The in-game settings sliders always total 100%. For rounds of 5, 10, or 15 questions, the category percentages determine the closest whole-question mix; questions then ramp from easier to harder. If a chosen category or difficulty has no remaining questions, the deck builder fills the round from the remaining pool without repeating a question.
+
+## Live online rooms
+
+Online rooms use Supabase Auth (anonymous guest sign-in), Postgres RPCs, row-level security, and Realtime. Set up the project once:
+
+1. Create a Supabase project and enable **Anonymous Sign-Ins** in its Auth provider settings.
+2. Copy `.env.example` to `.env.local` and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. The anon/publishable key is intended for browser use; never put a service-role or secret key in a `VITE_` variable.
+3. Run `supabase/migrations/202609290001_multiplayer_rooms.sql` in the Supabase SQL editor.
+4. Restart the Vite dev server or redeploy the app.
+
+The migration creates rooms, an eight-character invite code, a 16-player scoreboard, private question/answer-key storage, member-only read policies, and server-validated RPCs for starting, answering, and advancing rounds. Correct answers remain private until a round ends. The same invite code and synchronized timer are used on every device.
+
+Without Supabase credentials, solo play and local question/settings management still work; the online screen explains the required setup.

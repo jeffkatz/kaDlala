@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "category": "Culture",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.gov.za/about-sa/south-africa-glance",
+    "https://www.gov.za/documents/constitution-republic-south-africa-1996"
+  ],
+  "questions": [
+    {
+      "id": "cult_001",
+      "category": "Culture",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "How many official languages does South Africa have?",
+      "explanation": "South Africa recognises 12 official languages, including South African Sign Language.",
+      "options": [
+        {
+          "id": "cult_001_a",
+          "text": "11"
+        },
+        {
+          "id": "cult_001_b",
+          "text": "9"
+        },
+        {
+          "id": "cult_001_c",
+          "text": "12",
+          "isCorrect": true
+        },
+        {
+          "id": "cult_001_d",
+          "text": "10"
+        }
+      ],
+      "timeLimit": 12
+    },
+    {
+      "id": "cult_002",
+      "category": "Culture",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Which language became South Africa's 12th official language in 2023?",
+      "explanation": "The Constitution was amended in 2023 to recognise South African Sign Language as an official language.",
+      "options": [
+        {
+          "id": "cult_002_a",
+          "text": "Khoekhoegowab"
+        },
+        {
+          "id": "cult_002_b",
+          "text": "South African Sign Language",
+          "isCorrect": true
+        },
+        {
+          "id": "cult_002_c",
+          "text": "Fanagalo"
+        },
+        {
+          "id": "cult_002_d",
+          "text": "Shona"
+        }
+      ],
+      "timeLimit": 10
+    },
+    {
+      "id": "cult_003",
+      "category": "Culture",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "What is the name of the traditional Zulu warrior shield, usually made from hide?",
+      "explanation": "An ihawu is a traditional shield, commonly made from stretched animal hide.",
+      "options": [
+        {
+          "id": "cult_003_a",
+          "text": "Nguni"
+        },
+        {
+          "id": "cult_003_b",
+          "text": "Ihawu",
+          "isCorrect": true
+        },
+        {
+          "id": "cult_003_c",
+          "text": "Imbiza"
+        },
+        {
+          "id": "cult_003_d",
+          "text": "Isidwaba"
+        }
+      ],
+      "timeLimit": 12
+    },
+    {
+      "id": "cult_004",
+      "category": "Culture",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "What does the isiZulu greeting 'Sawubona' mean?",
+      "options": [
+        {
+          "id": "cult_004_a",
+          "text": "Goodbye"
+        },
+        {
+          "id": "cult_004_b",
+          "text": "I see you",
+          "isCorrect": true
+        },
+        {
+          "id": "cult_004_c",
+          "text": "Thank you"
+        },
+        {
+          "id": "cult_004_d",
+          "text": "Welcome home"
+        }
+      ],
+      "explanation": "Sawubona literally means 'I see you' and is a respectful way to greet one person.",
+      "timeLimit": 15
+    },
+    {
+      "id": "cult_005",
+      "category": "Culture",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Which two colours appear on the South African flag but not on any other national flag?",
+      "options": [
+        {
+          "id": "cult_005_a",
+          "text": "Black and green"
+        },
+        {
+          "id": "cult_005_b",
+          "text": "Green and gold"
+        },
+        {
+          "id": "cult_005_c",
+          "text": "Green and white"
+        },
+        {
+          "id": "cult_005_d",
+          "text": "No colours are exclusive to it",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Every colour on the South African flag appears on at least one other national flag.",
+      "timeLimit": 12
+    },
+    {
+      "id": "cult_006",
+      "category": "Culture",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "The Ndebele people are especially renowned for which visual art tradition?",
+      "options": [
+        {
+          "id": "cult_006_a",
+          "text": "Geometric murals and beadwork",
+          "isCorrect": true
+        },
+        {
+          "id": "cult_006_b",
+          "text": "Blue-and-white porcelain"
+        },
+        {
+          "id": "cult_006_c",
+          "text": "Woven silk tapestries"
+        },
+        {
+          "id": "cult_006_d",
+          "text": "Carved jade masks"
+        }
+      ],
+      "explanation": "Bold geometric house painting and intricate beadwork are widely recognised Ndebele art forms.",
+      "timeLimit": 10
+    }
+  ]
+}

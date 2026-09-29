@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "category": "Nature",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.sanbi.org/"
+  ],
+  "questions": [
+    {
+      "id": "nat_001",
+      "category": "Nature",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which flower is South Africa's national flower?",
+      "explanation": "The king protea, with its dramatic crown-like bloom, is South Africa's national flower.",
+      "options": [
+        {
+          "id": "nat_001_a",
+          "text": "Rose"
+        },
+        {
+          "id": "nat_001_b",
+          "text": "King protea",
+          "isCorrect": true
+        },
+        {
+          "id": "nat_001_c",
+          "text": "Aloe"
+        },
+        {
+          "id": "nat_001_d",
+          "text": "Strelitzia"
+        }
+      ],
+      "timeLimit": 15
+    },
+    {
+      "id": "nat_002",
+      "category": "Nature",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Which floral kingdom, found mostly in the Western Cape, is the smallest of the world's six?",
+      "explanation": "The Cape Floristic Region is the smallest of the six floral kingdoms and is exceptionally rich in endemic plants.",
+      "options": [
+        {
+          "id": "nat_002_a",
+          "text": "Succulent Karoo"
+        },
+        {
+          "id": "nat_002_b",
+          "text": "Cape Floristic Region",
+          "isCorrect": true
+        },
+        {
+          "id": "nat_002_c",
+          "text": "Maputaland-Pondoland-Albany"
+        },
+        {
+          "id": "nat_002_d",
+          "text": "Namaqualand Desert"
+        }
+      ],
+      "timeLimit": 10
+    },
+    {
+      "id": "nat_003",
+      "category": "Nature",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Which of these animals is endemic to South Africa?",
+      "explanation": "The critically endangered riverine rabbit is found only in the Karoo region of South Africa.",
+      "options": [
+        {
+          "id": "nat_003_a",
+          "text": "Meerkat"
+        },
+        {
+          "id": "nat_003_b",
+          "text": "Springbok"
+        },
+        {
+          "id": "nat_003_c",
+          "text": "Riverine rabbit",
+          "isCorrect": true
+        },
+        {
+          "id": "nat_003_d",
+          "text": "African elephant"
+        }
+      ],
+      "timeLimit": 12
+    },
+    {
+      "id": "nat_004",
+      "category": "Nature",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which action gives the springbok its name?",
+      "options": [
+        {
+          "id": "nat_004_a",
+          "text": "It springs into the air",
+          "isCorrect": true
+        },
+        {
+          "id": "nat_004_b",
+          "text": "It runs only at dawn"
+        },
+        {
+          "id": "nat_004_c",
+          "text": "It leaps across rivers"
+        },
+        {
+          "id": "nat_004_d",
+          "text": "It migrates every spring"
+        }
+      ],
+      "explanation": "Springbok are named for their pronking leaps, when they spring high into the air with a stiff-legged bounce.",
+      "timeLimit": 15
+    },
+    {
+      "id": "nat_005",
+      "category": "Nature",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Which biome is famous for South Africa's ancient, quiver-shaped aloe trees?",
+      "options": [
+        {
+          "id": "nat_005_a",
+          "text": "Fynbos"
+        },
+        {
+          "id": "nat_005_b",
+          "text": "Nama-Karoo",
+          "isCorrect": true
+        },
+        {
+          "id": "nat_005_c",
+          "text": "Highveld grassland"
+        },
+        {
+          "id": "nat_005_d",
+          "text": "Afrotemperate forest"
+        }
+      ],
+      "explanation": "Quiver trees are iconic succulents of the arid Nama-Karoo and Namaqualand landscapes.",
+      "timeLimit": 12
+    },
+    {
+      "id": "nat_006",
+      "category": "Nature",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Which of these is a South African endemic bird found in the fynbos?",
+      "options": [
+        {
+          "id": "nat_006_a",
+          "text": "African penguin"
+        },
+        {
+          "id": "nat_006_b",
+          "text": "Cape sugarbird",
+          "isCorrect": true
+        },
+        {
+          "id": "nat_006_c",
+          "text": "Secretarybird"
+        },
+        {
+          "id": "nat_006_d",
+          "text": "Lilac-breasted roller"
+        }
+      ],
+      "explanation": "Cape sugarbirds are endemic to the Cape Floristic Region and pollinate proteas.",
+      "timeLimit": 10
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "category": "History",
+  "reviewedAt": "2026-09-29",
+  "sources": [
+    "https://www.sahistory.org.za/",
+    "https://www.gov.za/about-sa/history"
+  ],
+  "questions": [
+    {
+      "id": "hist_001",
+      "category": "History",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "In what year did South Africa hold its first democratic national election?",
+      "explanation": "The 1994 election was the first national vote in which all South African adults could participate regardless of race.",
+      "options": [
+        {
+          "id": "hist_001_a",
+          "text": "1989"
+        },
+        {
+          "id": "hist_001_b",
+          "text": "1994",
+          "isCorrect": true
+        },
+        {
+          "id": "hist_001_c",
+          "text": "1999"
+        },
+        {
+          "id": "hist_001_d",
+          "text": "2004"
+        }
+      ],
+      "timeLimit": 15
+    },
+    {
+      "id": "hist_002",
+      "category": "History",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "On which date is South Africa's Freedom Day celebrated?",
+      "explanation": "Freedom Day on 27 April marks the 1994 election that began South Africa's democracy.",
+      "options": [
+        {
+          "id": "hist_002_a",
+          "text": "16 June"
+        },
+        {
+          "id": "hist_002_b",
+          "text": "27 April",
+          "isCorrect": true
+        },
+        {
+          "id": "hist_002_c",
+          "text": "9 August"
+        },
+        {
+          "id": "hist_002_d",
+          "text": "24 September"
+        }
+      ],
+      "timeLimit": 10
+    },
+    {
+      "id": "hist_003",
+      "category": "History",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "Where was Nelson Mandela imprisoned for most of his 27 years in captivity?",
+      "explanation": "Mandela spent 18 years of his imprisonment on Robben Island, before later transfers to Pollsmoor and Victor Verster.",
+      "options": [
+        {
+          "id": "hist_003_a",
+          "text": "Robben Island",
+          "isCorrect": true
+        },
+        {
+          "id": "hist_003_b",
+          "text": "Constitution Hill"
+        },
+        {
+          "id": "hist_003_c",
+          "text": "Pollsmoor Prison"
+        },
+        {
+          "id": "hist_003_d",
+          "text": "Victor Verster Prison"
+        }
+      ],
+      "timeLimit": 12
+    },
+    {
+      "id": "hist_004",
+      "category": "History",
+      "difficulty": "Easy",
+      "points": 100,
+      "text": "Which South African city is known as the 'City of Gold'?",
+      "options": [
+        {
+          "id": "hist_004_a",
+          "text": "Durban"
+        },
+        {
+          "id": "hist_004_b",
+          "text": "Johannesburg",
+          "isCorrect": true
+        },
+        {
+          "id": "hist_004_c",
+          "text": "Bloemfontein"
+        },
+        {
+          "id": "hist_004_d",
+          "text": "Gqeberha"
+        }
+      ],
+      "explanation": "Johannesburg grew rapidly after gold was discovered on the Witwatersrand in 1886.",
+      "timeLimit": 15
+    },
+    {
+      "id": "hist_005",
+      "category": "History",
+      "difficulty": "Medium",
+      "points": 200,
+      "text": "In which year was South Africa's current Constitution adopted by Parliament?",
+      "options": [
+        {
+          "id": "hist_005_a",
+          "text": "1994"
+        },
+        {
+          "id": "hist_005_b",
+          "text": "1996",
+          "isCorrect": true
+        },
+        {
+          "id": "hist_005_c",
+          "text": "1999"
+        },
+        {
+          "id": "hist_005_d",
+          "text": "2000"
+        }
+      ],
+      "explanation": "Parliament adopted the final Constitution in 1996; it came into force in 1997.",
+      "timeLimit": 12
+    },
+    {
+      "id": "hist_006",
+      "category": "History",
+      "difficulty": "Hard",
+      "points": 300,
+      "text": "Where was the Freedom Charter adopted in 1955?",
+      "options": [
+        {
+          "id": "hist_006_a",
+          "text": "Kliptown",
+          "isCorrect": true
+        },
+        {
+          "id": "hist_006_b",
+          "text": "Sharpeville"
+        },
+        {
+          "id": "hist_006_c",
+          "text": "Mvezo"
+        },
+        {
+          "id": "hist_006_d",
+          "text": "Qunu"
+        }
+      ],
+      "explanation": "The Congress of the People adopted the Freedom Charter in Kliptown, now part of Soweto.",
+      "timeLimit": 10
+    }
+  ]
+}
