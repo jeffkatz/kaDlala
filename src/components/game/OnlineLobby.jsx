@@ -66,7 +66,7 @@ function OnlineQuestion({ room, player, playerId, timeLeft, loading, error, onSu
           <div className={item.id === playerId ? 'live-player live-player--you' : 'live-player'} key={item.id}>
             <span>{String(index + 1).padStart(2, '0')}</span>
             <strong>{item.name}</strong>
-            <small>{item.score.toLocaleString()} pts</small>
+            <small>Score at finish</small>
           </div>
         ))}
       </div>
@@ -181,7 +181,7 @@ export default function OnlineLobby({
           <ol>
             <li>Copy <code>.env.example</code> to <code>.env.local</code>.</li>
             <li>Add your project URL and anon key.</li>
-            <li>Run <code>supabase/migrations/202609290001_multiplayer_rooms.sql</code> in the Supabase SQL editor and enable anonymous sign-ins.</li>
+            <li>Run the SQL files in <code>supabase/migrations/</code> in filename order and enable anonymous sign-ins.</li>
           </ol>
           <button type="button" className="btn btn-primary" onClick={onBack}>Back to game</button>
         </div>

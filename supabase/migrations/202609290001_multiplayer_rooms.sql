@@ -69,7 +69,8 @@ create policy "room members can read scoreboard"
 revoke all on public.quiz_room_questions from anon, authenticated;
 revoke insert, update, delete on public.quiz_rooms from anon, authenticated;
 revoke insert, update, delete on public.quiz_room_players from anon, authenticated;
-grant select on public.quiz_rooms, public.quiz_room_players to authenticated;
+grant select on public.quiz_rooms to authenticated;
+revoke select on public.quiz_room_players from public, anon, authenticated;
 
 create or replace function public.create_quiz_room(
   p_player_name text,
@@ -196,10 +197,15 @@ begin
     raise exception 'You are not a member of this room.';
   end if;
 
-  select coalesce(jsonb_agg(jsonb_build_object(
-    'id', user_id, 'name', display_name, 'score', score, 'streak', streak, 'bestStreak', best_streak,
-    'answered', last_answered_question = v_room.current_question_index
-  ) order by score desc, joined_at), '[]'::jsonb)
+  select coalesce(jsonb_agg(
+    jsonb_build_object(
+      'id', user_id, 'name', display_name,
+      'answered', last_answered_question = v_room.current_question_index
+    ) || case when v_room.status = 'finished' then jsonb_build_object(
+      'score', score, 'streak', streak, 'bestStreak', best_streak
+    ) else '{}'::jsonb end
+    order by case when v_room.status = 'finished' then score end desc nulls last, joined_at
+  ), '[]'::jsonb)
     into v_players
     from public.quiz_room_players where room_id = v_room.id;
 
@@ -279,7 +285,6 @@ declare
   v_question public.quiz_room_questions%rowtype;
   v_correct boolean;
   v_points integer := 0;
-  v_time_taken integer;
   v_streak integer;
   v_streak_bonus integer := 0;
 begin
@@ -300,7 +305,6 @@ begin
   ) then raise exception 'That answer is not an option for this question.'; end if;
 
   v_correct := coalesce(p_option_id = v_question.correct_option_id, false);
-  v_time_taken := greatest(0, floor(extract(epoch from (now() - v_room.question_started_at)))::integer);
   v_streak := case when v_correct then v_player.streak + 1 else 0 end;
   if v_correct then
     v_streak_bonus := case when v_streak >= 3 and v_streak % 3 = 0 then 50 else 0 end;
@@ -314,7 +318,7 @@ begin
     last_answered_question = p_question_index
     where room_id = v_room.id and user_id = auth.uid();
 
-  return jsonb_build_object('correct', v_correct, 'points', v_points, 'streak', v_streak, 'timeTaken', v_time_taken);
+  return jsonb_build_object('accepted', true);
 end;
 $$;
 
@@ -397,13 +401,6 @@ grant execute on function public.leave_quiz_room(text) to authenticated;
 do $$
 begin
   alter publication supabase_realtime add table public.quiz_rooms;
-exception when duplicate_object then null;
-end;
-$$;
-
-do $$
-begin
-  alter publication supabase_realtime add table public.quiz_room_players;
 exception when duplicate_object then null;
 end;
 $$;

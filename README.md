@@ -57,7 +57,7 @@ Requirements:
 - Every question needs a non-empty explanation and exactly four answer options, with exactly one `isCorrect: true`.
 - Re-check time-sensitive facts and update `reviewedAt` before distributing a question file.
 
-The in-game settings sliders always total 100%. For rounds of 5, 10, or 15 questions, the category percentages determine the closest whole-question mix; questions then ramp from easier to harder. If a chosen category or difficulty has no remaining questions, the deck builder fills the round from the remaining pool without repeating a question.
+The in-game settings sliders always total 100%. For rounds of 5, 10, or 15 questions, the category percentages determine the closest whole-question mix; questions then ramp from easier to harder. Settings also let solo players turn the 0.75-second correct-answer reveal on or off. If a chosen category or difficulty has no remaining questions, the deck builder fills the round from the remaining pool without repeating a question.
 
 ## Live online rooms
 
@@ -65,9 +65,9 @@ Online rooms use Supabase Auth (anonymous guest sign-in), Postgres RPCs, row-lev
 
 1. Create a Supabase project and enable **Anonymous Sign-Ins** in its Auth provider settings.
 2. Copy `.env.example` to `.env.local` and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. The anon/publishable key is intended for browser use; never put a service-role or secret key in a `VITE_` variable.
-3. Run `supabase/migrations/202609290001_multiplayer_rooms.sql` in the Supabase SQL editor.
+3. Run the SQL files in `supabase/migrations/` in filename order in the Supabase SQL editor.
 4. Restart the Vite dev server or redeploy the app.
 
-The migration creates rooms, an eight-character invite code, a 16-player scoreboard, private question/answer-key storage, member-only read policies, and server-validated RPCs for starting, answering, and advancing rounds. Correct answers remain private until a round ends. The same invite code and synchronized timer are used on every device.
+The migrations create rooms, an eight-character invite code, a 16-player scoreboard, private question/answer-key storage, member-only read policies, and server-validated RPCs for starting, answering, and advancing rounds. Correct answers and scores remain private until a round ends. The same invite code and synchronized timer are used on every device.
 
 Without Supabase credentials, solo play and local question/settings management still work; the online screen explains the required setup.

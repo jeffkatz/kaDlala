@@ -8,6 +8,8 @@ import TimerClock from './components/game/TimerClock';
 import useGameTimer from './hooks/useGameTimer';
 import SettingsPanel from './components/game/SettingsPanel';
 
+const ANSWER_REVEAL_DELAY_MS = 750;
+
 const QuestionCard = lazy(() => import('./components/game/QuestionCard'));
 const GameResults = lazy(() => import('./components/game/GameResults'));
 const OnlineLobby = lazy(() => import('./components/game/OnlineLobby'));
@@ -148,7 +150,11 @@ function App() {
       recordGame(state.score + points, Math.max(getBestStreak(state.answers), nextStreak));
     }
 
-    setTimeout(nextQuestion, 750);
+    if (gameSettings.revealCorrectAnswer) {
+      setTimeout(nextQuestion, ANSWER_REVEAL_DELAY_MS);
+    } else {
+      nextQuestion();
+    }
   }
 
   function handleRetryMissed() {
@@ -191,9 +197,11 @@ function App() {
             questions={questionLibrary.questions}
             weights={gameSettings.categoryPercentages}
             questionCount={gameSettings.questionCount}
+            revealCorrectAnswer={gameSettings.revealCorrectAnswer}
             onClose={() => setScreen('home')}
             onUpdateWeights={gameSettings.updateCategoryPercentages}
             onUpdateQuestionCount={gameSettings.updateQuestionCount}
+            onUpdateRevealCorrectAnswer={gameSettings.updateRevealCorrectAnswer}
             onGameMode={() => setScreen('online')}
             onAddQuestionBank={questionLibrary.addQuestionBank}
           />

@@ -41,9 +41,11 @@ export default function SettingsPanel({
   questions,
   weights,
   questionCount,
+  revealCorrectAnswer,
   onClose,
   onUpdateWeights,
   onUpdateQuestionCount,
+  onUpdateRevealCorrectAnswer,
   onGameMode,
   onAddQuestionBank
 }) {
@@ -186,6 +188,22 @@ export default function SettingsPanel({
                 </button>
               ))}
             </div>
+          </section>
+
+          <section className="settings-card" aria-labelledby="answer-reveal-title">
+            <p className="eyebrow">AFTER EACH ANSWER</p>
+            <h2 id="answer-reveal-title">Show the right answer</h2>
+            <p className="settings-description">
+              Pause for 0.75 seconds to reveal the correct answer before moving on. Turn this off to keep the round moving.
+            </p>
+            <label className="answer-reveal-toggle">
+              <input
+                type="checkbox"
+                checked={revealCorrectAnswer}
+                onChange={(event) => onUpdateRevealCorrectAnswer(event.target.checked)}
+              />
+              <span>Reveal answer before the next question</span>
+            </label>
           </section>
 
           <section className="settings-card import-card" aria-labelledby="question-import-title">

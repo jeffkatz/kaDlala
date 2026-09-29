@@ -80,12 +80,6 @@ export default function useOnlineRoom() {
         table: 'quiz_rooms',
         filter: `id=eq.${room.id}`
       }, refreshRoom)
-      .on('postgres_changes', {
-        event: '*',
-        schema: 'public',
-        table: 'quiz_room_players',
-        filter: `room_id=eq.${room.id}`
-      }, refreshRoom)
       .subscribe((status, subscriptionError) => {
         if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT') {
           setError(subscriptionError?.message || 'Live updates disconnected. Reconnecting…');

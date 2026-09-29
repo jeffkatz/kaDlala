@@ -20,11 +20,12 @@ function loadSettings() {
       questionCount: [5, 10, 15].includes(savedSettings.questionCount)
         ? savedSettings.questionCount
         : 10,
+      revealCorrectAnswer: savedSettings.revealCorrectAnswer !== false,
       categoryPercentages: savedSettings.categoryPercentages || {}
     };
   } catch (error) {
     console.warn('Could not load saved kaDlala game settings.', error);
-    return { questionCount: 10, categoryPercentages: {} };
+    return { questionCount: 10, revealCorrectAnswer: true, categoryPercentages: {} };
   }
 }
 
@@ -90,10 +91,16 @@ export default function useGameSettings(categories) {
     saveSettings({ ...savedSettings, questionCount, categoryPercentages });
   }
 
+  function updateRevealCorrectAnswer(revealCorrectAnswer) {
+    saveSettings({ ...savedSettings, revealCorrectAnswer, categoryPercentages });
+  }
+
   return {
     questionCount: savedSettings.questionCount,
+    revealCorrectAnswer: savedSettings.revealCorrectAnswer !== false,
     categoryPercentages,
     updateCategoryPercentages,
-    updateQuestionCount
+    updateQuestionCount,
+    updateRevealCorrectAnswer
   };
 }
