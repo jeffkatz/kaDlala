@@ -878,6 +878,161 @@ a:focus-visible {
   padding: 3.5rem 0;
 }
 
+.about-page {
+  width: 100%;
+  padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+  animation: reveal-up 420ms ease both;
+}
+
+.about-page__heading {
+  max-width: 850px;
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.about-page__heading h1 {
+  max-width: 780px;
+  margin: 1rem 0 1.15rem;
+  color: var(--paper);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(3rem, 7.2vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.about-page__heading h1 em {
+  color: var(--gold-light);
+  font-weight: 400;
+}
+
+.about-page__lede {
+  max-width: 670px;
+  margin: 0;
+  color: var(--paper-muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  line-height: 1.75;
+}
+
+.about-page__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(250px, 0.7fr);
+  align-items: start;
+  gap: clamp(2rem, 7vw, 6rem);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(243, 239, 229, 0.14);
+  border-bottom: 1px solid rgba(243, 239, 229, 0.14);
+}
+
+.about-page__story > p,
+.about-page__credits > p:not(.eyebrow) {
+  color: var(--paper-muted);
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+.about-page__story > p {
+  max-width: 660px;
+  margin: 0 0 1.15rem;
+}
+
+.about-page__story blockquote {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 620px;
+  margin: 2rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(229, 174, 61, 0.38);
+}
+
+.about-page__story blockquote > span {
+  color: var(--coral);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.about-page__story blockquote p {
+  margin: 0;
+  color: var(--paper);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.about-page__credits {
+  padding: 1.4rem;
+  border: 1px solid rgba(243, 239, 229, 0.12);
+  border-top: 2px solid var(--gold);
+  background: rgba(243, 239, 229, 0.025);
+}
+
+.about-page__credits h2 {
+  margin: 0.75rem 0;
+  color: var(--paper);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.about-page__credits > p:not(.eyebrow) {
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.about-page__credits strong {
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.about-page__company-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration-color: rgba(229, 174, 61, 0.5);
+  text-underline-offset: 4px;
+}
+
+.about-page__company-link:hover {
+  color: var(--paper);
+}
+
+.about-page__edition {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  column-gap: 0.7rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(243, 239, 229, 0.1);
+}
+
+.about-page__edition span {
+  color: var(--sage);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.about-page__edition small {
+  color: var(--muted);
+  font-size: 0.53rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.about-page__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
 .site-footer {
   display: flex;
   width: min(100%, 1440px);
@@ -1797,6 +1952,11 @@ a:focus-visible {
 }
 
 @media (max-width: 800px) {
+  .about-page__body {
+    grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+    gap: 2rem;
+  }
+
   .landing-card {
     min-height: auto;
     grid-template-columns: 1fr 0.5fr;
@@ -1868,6 +2028,29 @@ a:focus-visible {
 
   .header-link {
     font-size: 0.67rem;
+  }
+
+  .about-page__heading {
+    padding-bottom: 2rem;
+  }
+
+  .about-page__heading h1 {
+    font-size: clamp(2.75rem, 13vw, 4.5rem);
+  }
+
+  .about-page__body {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 1.5rem 0;
+  }
+
+  .about-page__credits {
+    padding: 1.15rem;
+  }
+
+  .about-page__actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .main-stage {

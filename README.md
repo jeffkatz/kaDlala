@@ -2,6 +2,8 @@
 
 kaDlala is a South African knowledge quiz for solo play and live rooms of up to 16 friends. A round mixes categories and difficulty, rewards quick answers and streaks, and ends with scorecards and answer explanations.
 
+The game celebrates South Africa’s people, places, culture, history, nature and more. It was designed and developed by Katlego Monamodi with Intelligence, from [Beyond Curious Labs](https://www.beyondcuriouslabs.co.za).
+
 ## Run locally
 
 ```sh
@@ -64,10 +66,19 @@ The in-game settings sliders always total 100%. For rounds of 5, 10, or 15 quest
 Online rooms use Supabase Auth (anonymous guest sign-in), Postgres RPCs, row-level security, and Realtime. Set up the project once:
 
 1. Create a Supabase project and enable **Anonymous Sign-Ins** in its Auth provider settings.
-2. Copy `.env.example` to `.env.local` and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`. The anon/publishable key is intended for browser use; never put a service-role or secret key in a `VITE_` variable.
+2. Copy `.env.example` to `.env.local` and set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` (or the legacy `VITE_SUPABASE_ANON_KEY`). A publishable/anon key is intended for browser use; never put a service-role or secret key in a `VITE_` variable.
 3. Run the SQL files in `supabase/migrations/` in filename order in the Supabase SQL editor.
 4. Restart the Vite dev server or redeploy the app.
 
 The migrations create rooms, an eight-character invite code, a 16-player scoreboard, private question/answer-key storage, member-only read policies, and server-validated RPCs for starting, answering, and advancing rounds. Correct answers and scores remain private until a round ends. The same invite code and synchronized timer are used on every device.
+
+Before using live rooms, deploy the authenticated `player-session` Edge Function. It uses `@supabase/server` to verify the signed-in guest's JWT and confirms the session is anonymous before the client creates or joins a room:
+
+```sh
+npx supabase login
+npx supabase functions deploy player-session --project-ref rqkjyidhptqovdrjaawi
+```
+
+Edge Functions import `@supabase/server` through Deno and need no npm install in this Vite app. Supabase injects the project URL, API keys, and JWT verification keys into its Edge Function runtime. This function does not use an admin client or secret key; never add `SUPABASE_SECRET_KEY` to a `VITE_` variable or browser environment.
 
 Without Supabase credentials, solo play and local question/settings management still work; the online screen explains the required setup.

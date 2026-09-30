@@ -11,6 +11,20 @@ export default function useOnlineRoom() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const refreshInProgress = useRef(false);
+  const verifiedPlayerId = useRef(null);
+
+  const verifyPlayerSession = useCallback(async (user) => {
+    if (verifiedPlayerId.current !== user.id) {
+      const { data: verifiedSession, error: verifyError } = await supabase.functions.invoke('player-session');
+      if (verifyError) throw verifyError;
+      if (verifiedSession?.userId !== user.id || verifiedSession.isAnonymous !== true) {
+        throw new Error('The server could not verify this anonymous player session.');
+      }
+      verifiedPlayerId.current = user.id;
+    }
+
+    return user.id;
+  }, []);
 
   useEffect(() => {
     if (!supabase) return undefined;
@@ -30,6 +44,7 @@ export default function useOnlineRoom() {
           return;
         }
 
+        await verifyPlayerSession(user);
         const { data, error: requestError } = await supabase.rpc('get_quiz_room_state', {
           p_code: savedCode
         });
@@ -49,7 +64,7 @@ export default function useOnlineRoom() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [verifyPlayerSession]);
 
   const refreshRoom = useCallback(async () => {
     if (!supabase || !room?.code || refreshInProgress.current) return;
@@ -96,12 +111,15 @@ export default function useOnlineRoom() {
 
     const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
     if (sessionError) throw sessionError;
-    if (sessionData.session?.user) return sessionData.session.user.id;
+    let user = sessionData.session?.user;
+    if (!user) {
+      const { data, error: signInError } = await supabase.auth.signInAnonymously();
+      if (signInError) throw signInError;
+      if (!data.user) throw new Error('Could not start an anonymous player session.');
+      user = data.user;
+    }
 
-    const { data, error: signInError } = await supabase.auth.signInAnonymously();
-    if (signInError) throw signInError;
-    if (!data.user) throw new Error('Could not start an anonymous player session.');
-    return data.user.id;
+    return verifyPlayerSession(user);
   }
 
   async function runRequest(request) {

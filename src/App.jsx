@@ -184,6 +184,7 @@ function App() {
             <>
               <button type="button" className="header-link" onClick={() => setScreen('online')}>Play with friends</button>
               <button type="button" className="header-link" onClick={() => setScreen('settings')}>Settings</button>
+              <button type="button" className="header-link" onClick={() => setScreen('about')}>About</button>
             </>
           )}
           <div className="header-note"><span className="status-dot" /> A LITTLE WISER EACH ROUND</div>
@@ -191,6 +192,62 @@ function App() {
       </header>
 
       <main className="main-stage">
+        {state.gameState === 'IDLE' && screen === 'about' && (
+          <article className="about-page" aria-labelledby="about-title">
+            <div className="about-page__heading">
+              <p className="eyebrow">A FIELD GUIDE TO SOUTH AFRICA</p>
+              <h1 id="about-title">Curiosity brings us <em>closer to home.</em></h1>
+              <p className="about-page__lede">
+                kaDlala is a quiz game made to celebrate the place we call home—and the many stories, people, places and ideas that make South Africa extraordinary.
+              </p>
+            </div>
+
+            <div className="about-page__body">
+              <div className="about-page__story">
+                <p>
+                  From landscapes and wildlife to food, sport, culture, history and public life, each round invites you to explore a little more of the country. Some answers will feel familiar; others might surprise you. Either way, there is always something new to take away.
+                </p>
+                <p>
+                  Play at your own pace on your own, or bring friends together for a live room. Choose the categories and round length that suit you, follow your score, and learn from the answers along the way.
+                </p>
+                <blockquote>
+                  <span aria-hidden="true">✳</span>
+                  <p>Made for the love of home, and the joy of discovering it again.</p>
+                </blockquote>
+              </div>
+
+              <aside className="about-page__credits" aria-label="About this project">
+                <p className="eyebrow">THE PEOPLE BEHIND THE FIELD GUIDE</p>
+                <h2>Built with curiosity.</h2>
+                <p>
+                  Designed and developed by <strong>Katlego Monamodi with Intelligence</strong>, from <strong>Beyond Curious Labs</strong>.
+                </p>
+                <a
+                  className="about-page__company-link"
+                  href="https://www.beyondcuriouslabs.co.za"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Beyond Curious Labs <span aria-hidden="true">↗</span>
+                </a>
+                <div className="about-page__edition">
+                  <span>{questionLibrary.questions.length}</span>
+                  <small>QUESTIONS IN THE FIELD</small>
+                  <span>{questionLibrary.categories.length}</span>
+                  <small>WAYS TO EXPLORE</small>
+                </div>
+              </aside>
+            </div>
+
+            <div className="about-page__actions">
+              <button type="button" className="btn btn-primary" onClick={handleStart}>
+                Start exploring <span aria-hidden="true">↗</span>
+              </button>
+              <button type="button" className="settings-back" onClick={() => setScreen('home')}>Back to home</button>
+            </div>
+          </article>
+        )}
+
         {state.gameState === 'IDLE' && screen === 'settings' && (
           <SettingsPanel
             categories={questionLibrary.categories}
